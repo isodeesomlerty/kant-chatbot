@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kant RAG Chatbot</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        #chat-container { border: 1px solid #ccc; height: 400px; overflow-y: scroll; padding: 10px; margin-bottom: 10px; }
+        #user-input { width: 70%; padding: 5px; }
+        #send-button { padding: 5px 10px; }
+        .chat-message { margin-bottom: 10px; }
+        .chat-message strong { color: #007bff; }
+    </style>
+</head>
+<body>
+    <h1>Kant RAG Chatbot</h1>
+    <div id="chat-container"></div>
+    <input type="text" id="user-input" placeholder="Ask a question about Kant's philosophy...">
+    <button id="send-button">Send</button>
+
+    <script>
+        $(document).ready(function() {
+            function sendMessage() {
+                var message = $('#user-input').val();
+                if (message.trim() === '') return;
+
+                $('#chat-container').append('<div class="chat-message"><strong>You:</strong> ' + message + '</div>');
+                $('#user-input').val('');
+
+                $.ajax({
+                    url: '/ask',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ message: message }),
+                    success: function(response) {
+                        $('#chat-container').append('<div class="chat-message"><strong>Chatbot:</strong> ' + response.response + '</div>');
+                        $('#chat-container').scrollTop($('#chat-container')[0].scrollHeight);
+                    }
+                });
+            }
+
+            $('#send-button').click(sendMessage);
+            $('#user-input').keypress(function(e) {
+                if (e.which == 13) sendMessage();
+            });
+        });
+    </script>
+</body>
+</html>

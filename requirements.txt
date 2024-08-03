@@ -1,0 +1,9 @@
+Flask
+openai
+faiss-cpu
+numpy
+requests
+nltk
+tqdm
+gunicorn
+markdown2

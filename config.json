@@ -1,0 +1,40 @@
+{
+    "kant_urls": [
+        {
+            "url": "https://www.gutenberg.org/cache/epub/4280/pg4280.txt",
+            "description": "The Critique of Pure Reason"
+        },
+        {
+            "url": "https://www.gutenberg.org/cache/epub/50922/pg50922.txt",
+            "description": "Perpetual Peace: A Philosophical Essay"
+        },
+        {
+            "url": "https://www.gutenberg.org/cache/epub/5682/pg5682.txt",
+            "description": "Fundamental Principles of the Metaphysic of Morals"
+        },
+        {
+            "url": "https://www.gutenberg.org/cache/epub/5683/pg5683.txt",
+            "description": "The Critique of Practical Reason"
+        },
+        {
+            "url": "https://www.gutenberg.org/cache/epub/52821/pg52821.txt",
+            "description": "Kant's Prolegomena to Any Future Metaphysics"
+        },
+        {
+            "url": "https://www.gutenberg.org/cache/epub/48433/pg48433.txt",
+            "description": "Kant's Critique of Judgement"
+        },
+        {
+            "url": "https://www.gutenberg.org/cache/epub/5684/pg5684.txt",
+            "description": "The Metaphysical Elements of Ethics"
+        },
+        {
+            "url": "https://www.gutenberg.org/cache/epub/46060/pg46060.txt",
+            "description": "Of the Injustice of Counterfeiting Books"
+        }
+    ],
+    "embedding_model": "text-embedding-3-small",
+    "chat_model": "gpt-4o-mini",
+    "max_chunk_size": 1000,
+    "num_relevant_chunks": 3
+}
